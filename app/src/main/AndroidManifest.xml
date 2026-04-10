@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrabalhoTela">
         <activity
-            android:name=".MainActivity"
+            android:name=".Tela3"
+            android:exported="false" />
+        <activity
+            android:name=".Tela2"
+            android:exported="false" />
+        <activity
+            android:name=".Tela1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
