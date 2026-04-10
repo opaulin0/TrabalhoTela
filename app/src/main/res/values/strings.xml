@@ -1,3 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">TrabalhoTela</string>
+
+    <!-- Nomes das telas (Toolbar / Manifest) -->
+    <string name="title_tela1">Cadastro</string>
+    <string name="title_tela2">Confirmação</string>
+    <string name="title_tela3">Sobre</string>
+
+    <!-- Tela 1 -->
+    <string name="titulo_formulario">Preencha seus dados</string>
+    <string name="label_nome">Nome</string>
+    <string name="hint_nome">Digite seu nome</string>
+    <string name="label_idade">Idade</string>
+    <string name="hint_idade">Digite sua idade</string>
+    <string name="label_endereco">Endereço</string>
+    <string name="hint_endereco">Digite seu endereço</string>
+    <string name="btn_salvar">SALVAR</string>
+    <string name="msg_campos_obrigatorios">Preencha todos os campos.</string>
+
+    <!-- Tela 2 -->
+    <string name="titulo_dados_cadastrados">Dados Cadastrados</string>
+    <string name="label_nome_resultado">Nome: %s</string>
+    <string name="label_idade_resultado">Idade: %s</string>
+    <string name="label_endereco_resultado">Endereço: %s</string>
+    <string name="pergunta_corretos">Seus dados estão corretos?</string>
+    <string name="btn_sim">SIM</string>
+    <string name="btn_nao">NÃO</string>
+    <string name="msg_cadastro_salvo">Cadastro salvo com sucesso!</string>
+
+    <!-- Tela 3 -->
+    <string name="sobre_app_nome">Trabalho Pelegrin</string>
+    <string name="sobre_disciplina">Desenvolvimento de Aplicações Mobile I</string>
+    <string name="label_curso">Curso</string>
+    <string name="sobre_curso">Sistemas de informação</string>
+    <string name="label_semestre">Semestre</string>
+    <string name="sobre_semestre">5º Semestre — 2025</string>
+    <string name="sobre_titulo_integrantes">Integrantes do Grupo</string>
+
+    <!-- ⚠️ Substitua pelos dados reais do seu grupo -->
+    <string name="sobre_nome1">Leonardo Fontana</string>
+    <string name="sobre_ra1">RA: 60003437</string>
+    <string name="sobre_nome2">Paulo Ricardo</string>
+    <string name="sobre_ra2">RA: 60003496</string>
+    <string name="sobre_nome3">Felipe Coronato</string>
+    <string name="sobre_ra3">RA: 60300641</string>
+
+
 </resources>
