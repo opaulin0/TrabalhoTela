@@ -61,7 +61,7 @@ public class Tela1 extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menu_sobre) {
+        if (item.getItemId() == R.id.btn_sobre) {
             Intent intent = new Intent(this, Tela3.class);
             startActivity(intent);
             return true;
