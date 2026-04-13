@@ -14,14 +14,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.EditText;
 
 public class Tela1 extends AppCompatActivity {
+    private EditText editTextInput1;
+    private EditText editTextInput2;
+    private EditText editTextInput3;
+    private Button buttonAcao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tela1);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tv_titulo), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -38,15 +44,12 @@ public class Tela1 extends AppCompatActivity {
             String idade = etIdade.getText().toString();
             String endereco = etEndereco.getText().toString();
 
-            if (nome.isEmpty() || idade.isEmpty() || endereco.isEmpty()) {
-                Toast.makeText(this, R.string.msg_campos_obrigatorios, Toast.LENGTH_SHORT).show();
-            } else {
-                Intent intent = new Intent(this, Tela2.class);
-                intent.putExtra("NOME", nome);
-                intent.putExtra("IDADE", idade);
-                intent.putExtra("ENDERECO", endereco);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(this, Tela2.class);
+            intent.putExtra("NOME", nome);
+            intent.putExtra("IDADE", idade);
+            intent.putExtra("ENDERECO", endereco);
+            startActivity(intent);
+
         });
     }
 
