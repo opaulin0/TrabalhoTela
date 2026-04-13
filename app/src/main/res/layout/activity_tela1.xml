@@ -144,6 +144,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="31dp"
         android:backgroundTint="#1565C0"
         android:text="@string/btn_salvar"
         android:textColor="#FFFFFF"

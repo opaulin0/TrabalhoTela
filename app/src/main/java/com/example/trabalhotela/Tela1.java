@@ -1,8 +1,15 @@
 package com.example.trabalhotela;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -20,5 +27,42 @@ public class Tela1 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        EditText etNome = findViewById(R.id.et_nome);
+        EditText etIdade = findViewById(R.id.et_idade);
+        EditText etEndereco = findViewById(R.id.et_endereco);
+        Button btnSalvar = findViewById(R.id.btn_salvar);
+
+        btnSalvar.setOnClickListener(v -> {
+            String nome = etNome.getText().toString();
+            String idade = etIdade.getText().toString();
+            String endereco = etEndereco.getText().toString();
+
+            if (nome.isEmpty() || idade.isEmpty() || endereco.isEmpty()) {
+                Toast.makeText(this, R.string.msg_campos_obrigatorios, Toast.LENGTH_SHORT).show();
+            } else {
+                Intent intent = new Intent(this, Tela2.class);
+                intent.putExtra("NOME", nome);
+                intent.putExtra("IDADE", idade);
+                intent.putExtra("ENDERECO", endereco);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menu_sobre) {
+            Intent intent = new Intent(this, Tela3.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

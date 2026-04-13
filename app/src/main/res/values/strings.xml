@@ -46,5 +46,10 @@
     <string name="sobre_nome3">Felipe Coronato</string>
     <string name="sobre_ra3">RA: 60300641</string>
 
+    <string name="sobre_ano">© 2025 — Todos os direitos reservados</string>
+    <string name="cd_icone_sobre">Ícone de informações</string>
+
+    <!-- Menu -->
+    <string name="menu_sobre">Sobre</string>
 
 </resources>
