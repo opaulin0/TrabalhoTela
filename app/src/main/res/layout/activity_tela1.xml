@@ -54,6 +54,8 @@
             android:background="@android:color/transparent"
             android:hint="@string/hint_nome"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:autofillHints="name"
             android:maxLines="1"
             android:textSize="15sp" />
     </LinearLayout>
@@ -93,6 +95,8 @@
             android:background="@android:color/transparent"
             android:hint="@string/hint_idade"
             android:inputType="number"
+            android:minHeight="48dp"
+            android:autofillHints="none"
             android:maxLines="1"
             android:textSize="15sp" />
     </LinearLayout>
@@ -132,6 +136,8 @@
             android:background="@android:color/transparent"
             android:hint="@string/hint_endereco"
             android:inputType="textPostalAddress"
+            android:minHeight="48dp"
+            android:autofillHints="postalAddress"
             android:maxLines="2"
             android:textSize="15sp" />
     </LinearLayout>
