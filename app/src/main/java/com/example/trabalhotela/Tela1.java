@@ -2,42 +2,33 @@ package com.example.trabalhotela;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.widget.EditText;
 
+/**
+ * Activity principal que gerencia o formulário de entrada de dados.
+ * Implementa métodos do ciclo de vida para monitoramento via log.
+ */
 public class Tela1 extends AppCompatActivity {
-    private EditText editTextInput1;
-    private EditText editTextInput2;
-    private EditText editTextInput3;
-    private Button buttonAcao;
+
+    private static final String TAG = "CICLO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tela1);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tv_titulo), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        Log.d(TAG, "Tela 1: executou onCreate");
 
         EditText etNome = findViewById(R.id.et_nome);
         EditText etIdade = findViewById(R.id.et_idade);
         EditText etEndereco = findViewById(R.id.et_endereco);
         Button btnSalvar = findViewById(R.id.btn_salvar);
+        ImageButton btnSobre = findViewById(R.id.btn_sobre_info);
 
         btnSalvar.setOnClickListener(v -> {
             String nome = etNome.getText().toString();
@@ -49,23 +40,41 @@ public class Tela1 extends AppCompatActivity {
             intent.putExtra("IDADE", idade);
             intent.putExtra("ENDERECO", endereco);
             startActivity(intent);
+        });
 
+        btnSobre.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Tela3.class);
+            startActivity(intent);
         });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
-        return true;
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Tela 1: executou onStart");
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.btn_sobre) {
-            Intent intent = new Intent(this, Tela3.class);
-            startActivity(intent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "Tela 1: executou onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "Tela 1: executou onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "Tela 1: executou onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "Tela 1: executou onDestroy");
     }
 }
