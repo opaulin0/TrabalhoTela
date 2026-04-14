@@ -1,9 +1,11 @@
 package com.example.trabalhotela;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,16 +36,25 @@ public class Tela2 extends AppCompatActivity {
         btnNao = findViewById(R.id.btn_nao);
 
         Bundle extras = getIntent().getExtras();
-        String nome = extras.getString("NOME");
-        String idade = extras.getString("IDADE");
-        String endereco = extras.getString("ENDERECO");
+        if (extras != null) {
+            String nome = extras.getString("NOME");
+            String idade = extras.getString("IDADE");
+            String endereco = extras.getString("ENDERECO");
 
             tvNome.setText("Nome: " + nome);
             tvIdade.setText("Idade: " + idade);
             tvEndereco.setText("Endereço: " + endereco);
+        }
 
         btnSim.setOnClickListener(v -> {
-            Intent intent = new Intent(Tela2.this, Tela3.class);
+            Context contexto = getApplicationContext();
+            String texto = "Cadastro salvo com sucesso";
+            int duracao = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(contexto, texto,duracao);
+            toast.show();
+            Intent intent = new Intent(Tela2.this, Tela1.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
 
