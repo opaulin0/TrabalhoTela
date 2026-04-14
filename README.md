@@ -38,5 +38,5 @@ Este projeto consiste em um aplicativo Android desenvolvido em Java, composto po
 1. Clone o repositório.
 2. Abra o projeto no **Android Studio**.
 3. Sincronize o Gradle.
-4. Execute em um emulador ou dispositivo físico com Android 5.0 (API 21) ou superior.
+4. Execute em um emulador ou dispositivo físico com Android 11.0 ou superior.
 5. Para ver os logs do ciclo de vida, filtre o **Logcat** pela palavra `CICLO`.
